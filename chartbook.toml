@@ -1,0 +1,123 @@
+[config]
+type = "pipeline"
+chartbook_format_version = "0.0.2"
+
+[site]
+title = "US Treasury Returns"
+author = "Jeremy Bejarano"
+copyright = "2025"
+logo_path = ""
+favicon_path = ""
+
+[pipeline]
+id = "us_treasury_returns"
+pipeline_name = "US Treasury Returns"
+pipeline_description = "Treasury bond returns from CRSP, including individual bond returns, maturity-sorted portfolios, and auction statistics"
+lead_pipeline_developer = "Jeremy Bejarano"
+contributors = ["Jeremy Bejarano"]
+runs_on = "Windows/Linux/MacOS"
+git_repo_URL = "https://github.com/ftsfr/us_treasury_returns"
+README_file_path = "./README.md"
+
+[notebooks]
+
+[notebooks.summary_treasury_bond_returns]
+notebook_name = "summary_treasury_bond_returns"
+notebook_description = "Summary statistics and visualization of Treasury bond returns"
+notebook_path = "_output/_notebook_build/summary_treasury_bond_returns.ipynb"
+is_publishable = true
+
+[charts]
+
+[dataframes]
+
+[dataframes.ftsfr_treas_bond_returns]
+dataframe_name = "ftsfr_treas_bond_returns"
+short_description_df = "Individual Treasury bond monthly returns in long format"
+data_sources = ["CRSP Treasury Database"]
+data_providers = ["WRDS"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://wrds-www.wharton.upenn.edu/"]
+topic_tags = ["treasury", "bonds", "returns"]
+type_of_data_access = ["WRDS Subscription"]
+data_license = "WRDS"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Pulled from WRDS CRSP Treasury Database"
+path_to_parquet_data = "./_data/ftsfr_treas_bond_returns.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Individual Treasury Bond Monthly Returns
+
+This dataset contains monthly returns for individual Treasury bonds.
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Treasury record identifier (kytreasno) |
+| ds | Month-end date |
+| y | Monthly return (compounded from daily returns) |
+
+### Data Source
+
+CRSP US Treasury Database via WRDS
+
+### Time Period
+
+1970 - present (quarterly updates)
+"""
+
+[dataframes.ftsfr_treas_bond_portfolio_returns]
+dataframe_name = "ftsfr_treas_bond_portfolio_returns"
+short_description_df = "Treasury bond portfolio returns grouped by maturity buckets"
+data_sources = ["CRSP Treasury Database"]
+data_providers = ["WRDS"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://wrds-www.wharton.upenn.edu/"]
+topic_tags = ["treasury", "bonds", "portfolios", "returns"]
+type_of_data_access = ["WRDS Subscription"]
+data_license = "WRDS"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Pulled from WRDS CRSP Treasury Database"
+path_to_parquet_data = "./_data/ftsfr_treas_bond_portfolio_returns.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## Treasury Bond Portfolio Returns
+
+This dataset contains portfolio returns grouped by maturity buckets.
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Maturity group (1-10, representing 6-month intervals from 0-5 years) |
+| ds | Month-end date |
+| y | Average monthly return for the maturity group |
+
+### Maturity Groups
+
+| Group | Maturity Range |
+|-------|----------------|
+| 1 | 0 to 6 months |
+| 2 | 6 months to 1 year |
+| 3 | 1 year to 1.5 years |
+| 4 | 1.5 to 2 years |
+| 5 | 2 to 2.5 years |
+| 6 | 2.5 to 3 years |
+| 7 | 3 to 3.5 years |
+| 8 | 3.5 to 4 years |
+| 9 | 4 to 4.5 years |
+| 10 | 4.5 to 5 years |
+
+### Data Source
+
+CRSP US Treasury Database via WRDS
+"""
