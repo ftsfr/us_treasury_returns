@@ -1,0 +1,25 @@
+# Paper References for US Treasury Returns Module
+
+[Fama1993]
+title = "Common risk factors in the returns on stocks and bonds"
+authors = "Eugene F. Fama and Kenneth R. French"
+year = 1993
+journal = "Journal of Financial Economics"
+description = "The paper identifies common risk factors in bond returns including maturity and default risk factors."
+empirical_facts = [
+    "Two bond-market factors are identified, related to maturity and default risks.",
+    "Bond-market factors capture common variation in bond returns.",
+]
+data_sources = ["CRSP Treasury Database"]
+
+[Gurkaynak2007]
+title = "The U.S. Treasury yield curve: 1961 to the present"
+authors = "Refet S. Gurkaynak, Brian Sack, and Jonathan H. Wright"
+year = 2007
+journal = "Journal of Monetary Economics"
+description = "The paper provides methodology for estimating Treasury yields across the maturity spectrum."
+empirical_facts = [
+    "Zero-coupon yields can be estimated using parametric models.",
+    "The methodology is used by the Federal Reserve for official yield curve estimates.",
+]
+data_sources = ["Federal Reserve", "Treasury market data"]

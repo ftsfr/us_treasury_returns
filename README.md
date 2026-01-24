@@ -47,3 +47,20 @@ Bonds are grouped into 10 maturity buckets (6-month intervals from 0-5 years):
 - Group 2: 6 months to 1 year
 - ...
 - Group 10: 4.5 to 5 years
+
+## Academic References
+
+### Primary Papers
+
+- **Fama and French (1993)** - "Common risk factors in the returns on stocks and bonds"
+  - Journal of Financial Economics
+  - TERM factor construction from Treasury bond returns
+
+- **Gurkaynak, Sack, and Wright (2007)** - "The U.S. Treasury yield curve: 1961 to the present"
+  - Journal of Monetary Economics
+  - Methodology for Treasury yield estimation
+
+### Key Findings
+
+- Treasury returns vary systematically by maturity
+- The TERM factor (long minus short Treasury returns) captures maturity risk
